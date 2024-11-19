@@ -40,9 +40,8 @@ class Detector:
         return False
 
     def verificar_secuencia(self, secuencia):
-        for i in range(len(secuencia) - 3):
-            if secuencia[i] == secuencia[i+1] == secuencia[i+2] == secuencia[i+3]:
-                return True
+        if secuencia[i] == secuencia[i+1] == secuencia[i+2] == secuencia[i+3]:
+            return True
         return False
 
 class Mutador:
