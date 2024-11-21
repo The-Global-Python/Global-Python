@@ -39,8 +39,8 @@ Este proyecto es una aplicación interactiva para gestionar matrices de ADN. Per
 
 1. Clona el repositorio en tu máquina local:
    ```bash
-   git clone https://github.com/tu_usuario/gestion-adn.git
-   cd gestion-adn
+   git clone https://github.com/The-Global-Python/Global-Python.git
+   cd Global-python
    ```
 
 2. Ejecuta el programa principal:
