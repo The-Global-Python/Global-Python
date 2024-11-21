@@ -1,118 +1,136 @@
-# Proyecto de Detección y Mutación de ADN
+# **Proyecto de Detección y Mutación de ADN**
 
-## Descripción
-Este proyecto tiene como objetivo detectar, mutar y sanar secuencias de ADN. El programa permite al usuario ingresar una matriz de ADN de 6x6 y realizar diferentes operaciones sobre ella, como detectar mutaciones, crear mutaciones mediante radiación o virus, y sanar el ADN mutado.
+Este proyecto es una aplicación interactiva para gestionar matrices de ADN. Permite detectar mutaciones, realizar mutaciones de diferentes tipos y sanar ADN mutante. Está diseñado para analizar secuencias de bases nitrogenadas (`A`, `C`, `G`, `T`) y realizar modificaciones siguiendo reglas predefinidas.
 
-## Participantes
+---
+
+## **Integrantes**
+
 - Leandro Azcurra
+- Leandro Mercado
 - Lisandro Romero
 - Octavio Skumanic
 
-## Instrucciones de Ejecución
+---
+## **Características**
+
+### 1. **Detección de Mutaciones**
+   - Verifica si el ADN ingresado tiene mutaciones horizontales, verticales o diagonales.
+   - Las mutaciones se definen como repeticiones consecutivas de 4 bases nitrogenadas iguales en la matriz.
+
+### 2. **Mutaciones**
+   - **Radiación:** Crea mutaciones horizontales o verticales en la matriz de ADN.
+   - **Virus:** Genera mutaciones diagonales en la matriz de ADN.
+
+### 3. **Sanación de ADN**
+   - Identifica y reemplaza ADN mutado con una nueva matriz generada aleatoriamente hasta eliminar todas las mutaciones.
+
+### 4. **Interfaz Interactiva**
+   - Permite al usuario:
+     - Cargar una nueva matriz de ADN.
+     - Detectar mutaciones.
+     - Crear mutaciones personalizadas.
+     - Sanar el ADN.
+     - Mostrar el estado actual del ADN.
+
+---
+
+## **Ejecución**
 
 1. Clona el repositorio en tu máquina local:
-    ```sh
-    git clone https://github.com/tu-usuario/tu-repositorio.git
-    ```
+   ```bash
+   git clone https://github.com/tu_usuario/gestion-adn.git
+   cd gestion-adn
+   ```
 
-2. Navega al directorio del proyecto:
-    ```sh
-    cd tu-repositorio
-    ```
+2. Ejecuta el programa principal:
+   ```bash
+   python main.py
+   ```
 
-3. Ejecuta el programa principal:
-    ```sh
-    python main.py
-    ```
+3. Sigue las instrucciones en pantalla para interactuar con el programa.
 
-## Ejemplo de Uso
+---
 
-### Ingreso del ADN
-El programa solicitará que ingreses el ADN en forma de una matriz de 6x6. Por ejemplo:
+## **Uso**
 
-ATGCGA
-CAGTGC
-TTATGT
-AGAAGG
-CCCCTA
-TCACTG
+### Carga de ADN
+- Se solicita al usuario ingresar 6 cadenas de 6 caracteres cada una (`A`, `C`, `G`, `T`).
+- Ejemplo de entrada válida:
+  ```
+  ATGCGA
+  CAGTGC
+  TTATGT
+  AGAAGG
+  CCCCTA
+  TCACTG
+  ```
+
 ### Opciones del Menú
-El programa presentará un menú con las siguientes opciones:
-1. Detectar mutaciones
-2. Mutar el ADN
-3. Sanar el ADN
+1. **Detectar Mutaciones:**
+   - Muestra si el ADN tiene mutaciones y de qué tipo (horizontal, vertical o diagonal).
 
-### Ejemplo de Detección de Mutaciones
-Si seleccionas la opción 1, el programa detectará si el ADN es un mutante o no.
+2. **Mutar el ADN:**
+   - Selecciona entre:
+     - Radiación: Inserta mutaciones horizontales o verticales en una posición específica.
+     - Virus: Inserta mutaciones diagonales.
 
-**Input:** 1
-**Output:** El ADN es un mutante
+3. **Sanar el ADN:**
+   - Genera una nueva matriz hasta eliminar todas las mutaciones.
+
+4. **Mostrar el ADN:**
+   - Visualiza la matriz actual del ADN.
+
+5. **Salir:**
+   - Termina la ejecución del programa.
+
+---
+
+## **Ejemplo de Flujo**
+
+1. **Cargar ADN inicial:**
+   - Entrada:
+     ```
+     ATGCGA
+     CAGTGC
+     TTATGT
+     AGAAGG
+     CCCCTA
+     TCACTG
+     ```
+   - Salida:
+     ```
+     ADN cargado con éxito.
+     ```
+
+2. **Detectar Mutaciones:**
+   - Salida:
+     ```
+     El ADN es mutante. Mutación detectada: Horizontal.
+     ```
+
+3. **Mutar ADN:**
+   - Selecciona **Radiación**:
+     - Base nitrogenada: `A`
+     - Posición inicial: (2, 1)
+     - Orientación: Horizontal
+   - Salida:
+     ```
+     ADN mutado con éxito.
+     ```
+
+4. **Sanar ADN:**
+   - Salida:
+     ```
+     ADN sanado. No se encontraron mutaciones.
+     ```
+
+5. **Mostrar ADN:**
+   - Salida:
+     ```
+     ['A', 'T', 'G', 'C', 'G', 'A']
+     ['C', 'A', 'G', 'T', 'G', 'C']
+     ...
+     ```
 
 
-### Ejemplo de Mutación del ADN
-Si seleccionas la opción 2, el programa te permitirá crear una mutación mediante radiación o virus.
-
-### Mutación de ADN
-**Output:**
-  ¿Qué desea hacer?
-    1. Detectar mutaciones
-    2. Mutar el ADN
-    3. Sanar el ADN
-    Seleccione una opción (1/2/3):
-**Input:** 2
-Esto selecciona la opción de mutar el ADN.
-
-**Output:**
-¿Qué tipo de mutación desea crear?
-	1. Radiación (horizontal o vertical)
-	2. Virus (diagonal)
-
-**Input:** 1
-Esto selecciona la opción de mutación por radiación.
-
-**Output:**
-Ingrese la base nitrogenada a repetir (A, T, C, G):
-
-**Input:** A
-Esto especifica que la base nitrogenada a repetir es 'A'.
-
-**Output:**
-Ingrese la posición inicial (fila, columna):
-
-**Input:** 0 0
-Esto indica la posición inicial (fila 0, columna 0) donde comenzará la mutación.
-
-**Output:**
-Ingrese la orientación de la mutación (H para horizontal, V para vertical):
-
-**Input:** H
-Esto indica que la orientación de la mutación es horizontal.
-
-**Output:**
-ADN mutado:
-AAAAAA
-CAGTGC
-TTATGT
-AGAAGG
-CCCCTA
-TCACTG
-
-
-### Ejemplo de Sanación del ADN
-Si seleccionas la opción 3, el programa sanará el ADN mutado generando una nueva matriz de ADN.
-
-**Input:** 3
-
-**Output:**
-
-**Output:**
-ADN sanado:
-GTACGA
-CAGTGC
-TTATGT
-AGAAGG
-CCCCTA
-TCACTG
-## Notas
-- Asegúrate de ingresar las filas de la matriz de ADN correctamente, cada fila debe tener exactamente 6 caracteres.
-- Las opciones de mutación y sanación modificarán la matriz de ADN original.
