@@ -47,6 +47,10 @@ Este proyecto es una aplicación interactiva para gestionar matrices de ADN. Per
    ```bash
    python ejecutable.py
    ```
+   o 
+   ```
+   python3 ejecutable.py
+   ```
 
 3. Sigue las instrucciones en pantalla para interactuar con el programa.
 
